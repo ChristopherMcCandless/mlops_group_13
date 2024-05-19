@@ -1,4 +1,4 @@
-# MLOps project geoup 13
+# MLOps project group 13
 ![Logotype](./data/a56d354a-4d89-42dc-ada7-09097251ed4d.webp)
 ### Структура проекта
 
