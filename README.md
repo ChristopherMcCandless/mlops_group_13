@@ -1,22 +1,24 @@
-Структура проекта и назначение файлов:
+### Структура проекта
 
-src/                                  - каталог с исполняемыми скриптами приложения
-    src/api_app_titanic.py            - API приложение на FASTAPI
-    src/dataset_titanic_modifed.py    - создаем "плохой" датасет
-    src/make_dataset_titanic.py       - сохраняем датасет Titanic
-    src/model_titanic.py              - обучаем модель на данных датасета Titanic
-
-test/
-    test/api_app_test.py              - модульное тестирование API приложения
-    test/dataset_test.py              - функциональное тестирование предсказательной способности модели
-
-./doker_container_run.bat             - запуск docker контейнера с приложением из образа (Windows)
-./doker_container_run.sh              - запуск docker контейнера с приложением из образа (Unix)
-./Dokerfile                           - файл для создания doker образа приложения
-./Jenkinsfile                         - конвейер для автоматического развертывания приложения, 
-                                        тестирования и сборки doker образа
-./predict_titanic.bat                 - командный файл для проверки работы API приложения (Windows)
-./predict_titanic.sh                  - командный файл для проверки работы API приложения (Unix)
+```
+.
+├── ...
+├── src                              # каталог с исполняемыми скриптами приложения
+│   ├── api_app_titanic.py           # API приложение на FASTAPImodels
+│   ├── dataset_titanic_modifed.py   # создание "плохого" датасета
+│   ├── make_dataset_titanic.py      # сохранение датасета Titanic
+│   └── model_titanic.py             # обучение модели на данных датасета Titanic
+├── tests                            # unit tests
+│   ├── api_app_test.py              # модульное тестирование API приложения
+└── └── dataset_test.py              # функциональное тестирование предсказательной способности модели
+./doker_container_run.bat            # запуск docker контейнера с приложением из образа (Windows)
+./doker_container_run.sh             # запуск docker контейнера с приложением из образа (Unix)
+./Dokerfile                          # файл для создания doker образа приложения
+./Jenkinsfile                        # конвейер для автоматического развертывания приложения, 
+                                       тестирования и сборки doker образа
+./predict_titanic.bat                # командный файл для проверки работы API приложения (Windows)
+./predict_titanic.sh                 # командный файл для проверки работы API приложения (Unix)
+```
 
 Приложение собирается в docker контейнере. Сборка приложения, тестирование и создание docker образа происходит в
 автоматическом режиме в Jenkins на основе файла сценария Jenkinsfile.
